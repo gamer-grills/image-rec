@@ -9,12 +9,12 @@ height, width = img.shape[:2]
 matrix = [0]
 for x in range(width):
     #only measure within 15 pixels to text
-    measuring = 15
     for y in range(height):
         color = img[x,y]
         if ( color != 255):
             #If the pixel is not white then it's text and add it to training matrix
             matrix.append(1)
+            measuring = 15
         elif(measuring > 0):
             #If it's within 15 pixels of a black pixel, then add the white pixel to the matrix
             matrix.append(0)

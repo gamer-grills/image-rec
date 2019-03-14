@@ -2,11 +2,13 @@ import cv2
 import numpy as np
 
 #Read the image
-img = cv2.imread('Test1.png', 0)
+img = cv2.imread('Test5.png', 0)
 #Get the size of the image
-height, width = img.shape[:2]
+width, height = img.shape[:2]
+
 #This will be fed pixel by pixel to the input of the neural network
 matrix = [0]
+measuring = 15
 for x in range(width):
     #only measure within 15 pixels to text
     for y in range(height):
